@@ -1,0 +1,959 @@
+/* =========================================================
+   RAG PDF AI ASSISTANT
+   MODERN UI / UX DESIGN
+   Premium AI SaaS Interface
+   ========================================================= */
+
+
+/* =========================================================
+   1. FONT
+   ========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap'
+);
+
+
+/* =========================================================
+   2. DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+
+    --purple: #7c3aed;
+    --violet: #8b5cf6;
+
+    --cyan: #06b6d4;
+
+    --green: #10b981;
+
+    --dark: #0f172a;
+    --dark-2: #1e293b;
+
+    --text: #334155;
+    --muted: #64748b;
+
+    --white: #ffffff;
+
+    --border: rgba(148, 163, 184, 0.22);
+
+    --glass:
+        rgba(255, 255, 255, 0.72);
+
+    --shadow:
+        0 20px 60px
+        rgba(15, 23, 42, 0.08);
+
+    --shadow-hover:
+        0 25px 70px
+        rgba(37, 99, 235, 0.15);
+
+    --radius: 22px;
+}
+
+
+/* =========================================================
+   3. MAIN APP BACKGROUND
+   ========================================================= */
+
+.stApp {
+
+    min-height: 100vh;
+
+    font-family: 'Inter', sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(37, 99, 235, 0.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(124, 58, 237, 0.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(6, 182, 212, 0.10),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #f1f5ff 45%,
+            #faf8ff 100%
+        );
+
+}
+
+
+/* =========================================================
+   4. MAIN CONTENT
+   ========================================================= */
+
+.block-container {
+
+    max-width: 1100px;
+
+    padding-top: 55px;
+
+    padding-bottom: 80px;
+
+}
+
+
+/* =========================================================
+   5. HERO TITLE
+   ========================================================= */
+
+h1 {
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    text-align: center;
+
+    font-size: 52px !important;
+
+    line-height: 1.1;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 14px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4,
+            #2563eb
+        );
+
+    background-size: 300% auto;
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        heroGradient 7s ease infinite;
+
+}
+
+
+@keyframes heroGradient {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+
+}
+
+
+/* =========================================================
+   6. HERO SUBTITLE
+   ========================================================= */
+
+h1 + div p {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 35px auto;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   7. GLOBAL HEADINGS
+   ========================================================= */
+
+h2,
+h3 {
+
+    font-family:
+        'Space Grotesk',
+        sans-serif;
+
+    color: var(--dark) !important;
+
+    font-weight: 700 !important;
+
+}
+
+
+/* =========================================================
+   8. INFO / STATUS CARD
+   ========================================================= */
+
+div[data-testid="stAlert"] {
+
+    border-radius: 18px !important;
+
+    border: 1px solid
+        rgba(37, 99, 235, 0.14) !important;
+
+    background:
+        rgba(255, 255, 255, 0.72) !important;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(37, 99, 235, 0.07);
+
+    padding: 6px 10px;
+
+}
+
+
+/* =========================================================
+   9. PDF UPLOAD CARD
+   ========================================================= */
+
+section[data-testid="stFileUploader"] {
+
+    position: relative;
+
+    margin-top: 15px;
+
+    margin-bottom: 30px;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    border: 2px dashed
+        rgba(37, 99, 235, 0.30);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.88),
+            rgba(239,246,255,0.78)
+        );
+
+    backdrop-filter: blur(20px);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+/* Upload hover */
+
+section[data-testid="stFileUploader"]:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        var(--shadow-hover);
+
+}
+
+
+/* =========================================================
+   10. UPLOAD LABEL
+   ========================================================= */
+
+section[data-testid="stFileUploader"]
+label {
+
+    color: var(--dark) !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700 !important;
+
+}
+
+
+/* =========================================================
+   11. UPLOAD BUTTON
+   ========================================================= */
+
+section[data-testid="stFileUploader"]
+button {
+
+    border-radius: 12px !important;
+
+    border:
+        1px solid
+        rgba(37,99,235,0.18) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #eef2ff
+        ) !important;
+
+    color:
+        var(--blue) !important;
+
+    font-weight: 700 !important;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+section[data-testid="stFileUploader"]
+button:hover {
+
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        ) !important;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   12. FILE NAME
+   ========================================================= */
+
+[data-testid="stFileUploaderFileName"] {
+
+    font-weight: 600 !important;
+
+    color:
+        var(--dark) !important;
+
+}
+
+
+/* =========================================================
+   13. INPUT AREA
+   ========================================================= */
+
+div[data-testid="stTextInput"] {
+
+    margin-top: 25px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Input label */
+
+div[data-testid="stTextInput"]
+label {
+
+    color: var(--dark) !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700 !important;
+
+}
+
+
+/* =========================================================
+   14. QUESTION INPUT
+   ========================================================= */
+
+div[data-testid="stTextInput"]
+input {
+
+    height: 58px;
+
+    padding:
+        0 20px;
+
+    border-radius: 17px !important;
+
+    border:
+        1.5px solid
+        var(--border) !important;
+
+    background:
+        rgba(255,255,255,0.88) !important;
+
+    color:
+        var(--dark) !important;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,23,42,0.06);
+
+    transition:
+        all 0.3s ease;
+
+}
+
+
+/* Input hover */
+
+div[data-testid="stTextInput"]
+input:hover {
+
+    border-color:
+        rgba(37,99,235,0.35) !important;
+
+}
+
+
+/* Input focus */
+
+div[data-testid="stTextInput"]
+input:focus {
+
+    border-color:
+        var(--blue) !important;
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(37,99,235,0.10),
+
+        0 15px 40px
+        rgba(37,99,235,0.10) !important;
+
+}
+
+
+/* =========================================================
+   15. PLACEHOLDER
+   ========================================================= */
+
+div[data-testid="stTextInput"]
+input::placeholder {
+
+    color:
+        #94a3b8;
+
+}
+
+
+/* =========================================================
+   16. ANSWER SECTION
+   ========================================================= */
+
+h3 {
+
+    margin-top: 30px !important;
+
+    padding: 18px 20px;
+
+    border-radius: 17px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,0.07),
+            rgba(124,58,237,0.07)
+        );
+
+    border:
+        1px solid
+        rgba(37,99,235,0.10);
+
+}
+
+
+/* =========================================================
+   17. ANSWER CONTENT
+   ========================================================= */
+
+.stMarkdown {
+
+    color:
+        var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   18. ANSWER HIGHLIGHT
+   ========================================================= */
+
+.stMarkdown p {
+
+    line-height: 1.85;
+
+}
+
+
+/* =========================================================
+   19. EXPANDER
+   ========================================================= */
+
+details {
+
+    margin-top: 20px;
+
+    border-radius: 18px !important;
+
+    border:
+        1px solid
+        rgba(148,163,184,0.20) !important;
+
+    background:
+        rgba(255,255,255,0.68) !important;
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 10px 35px
+        rgba(15,23,42,0.05);
+
+    transition:
+        all 0.3s ease;
+
+}
+
+
+details:hover {
+
+    border-color:
+        rgba(37,99,235,0.25) !important;
+
+    box-shadow:
+        0 15px 45px
+        rgba(37,99,235,0.08);
+
+}
+
+
+/* Expander heading */
+
+details summary {
+
+    padding: 17px !important;
+
+    color:
+        var(--dark) !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+/* =========================================================
+   20. DIVIDER
+   ========================================================= */
+
+hr {
+
+    border: none !important;
+
+    height: 1px;
+
+    margin:
+        35px 0 !important;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(148,163,184,0.35),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   21. SPINNER
+   ========================================================= */
+
+[data-testid="stSpinner"] {
+
+    padding: 10px;
+
+}
+
+
+[data-testid="stSpinner"] p {
+
+    color:
+        var(--blue) !important;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =========================================================
+   22. BUTTON SYSTEM
+   ========================================================= */
+
+.stButton > button {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    border: none !important;
+
+    border-radius: 15px !important;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        ) !important;
+
+    background-size:
+        250% auto !important;
+
+    color:
+        white !important;
+
+    font-family:
+        'Inter',
+        sans-serif !important;
+
+    font-size:
+        15px !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        0.2px;
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(37,99,235,0.22);
+
+    transition:
+        all 0.3s ease;
+
+}
+
+
+/* Button hover */
+
+.stButton > button:hover {
+
+    background-position:
+        right center !important;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 18px 40px
+        rgba(124,58,237,0.25);
+
+}
+
+
+/* Button click */
+
+.stButton > button:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+/* =========================================================
+   23. SUCCESS MESSAGE
+   ========================================================= */
+
+div[data-testid="stAlert"] p {
+
+    font-weight:
+        600;
+
+}
+
+
+/* =========================================================
+   24. CODE BLOCK
+   ========================================================= */
+
+pre {
+
+    border-radius:
+        16px !important;
+
+    border:
+        1px solid
+        var(--border) !important;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15,23,42,0.05);
+
+}
+
+
+/* =========================================================
+   25. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #eef2f7;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    border-radius:
+        20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #1d4ed8,
+            #6d28d9
+        );
+
+}
+
+
+/* =========================================================
+   26. TEXT SELECTION
+   ========================================================= */
+
+::selection {
+
+    background:
+        rgba(37,99,235,0.18);
+
+    color:
+        var(--dark);
+
+}
+
+
+/* =========================================================
+   27. STREAMLIT CLEANUP
+   ========================================================= */
+
+#MainMenu {
+
+    visibility:
+        hidden;
+
+}
+
+
+footer {
+
+    visibility:
+        hidden;
+
+}
+
+
+header[data-testid="stHeader"] {
+
+    background:
+        transparent;
+
+}
+
+
+/* =========================================================
+   28. RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .block-container {
+
+        padding-top:
+            35px;
+
+        padding-left:
+            20px;
+
+        padding-right:
+            20px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            38px !important;
+
+        letter-spacing:
+            -1.2px;
+
+    }
+
+
+    section[data-testid="stFileUploader"] {
+
+        padding:
+            20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   29. RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .block-container {
+
+        padding-top:
+            25px;
+
+        padding-left:
+            14px;
+
+        padding-right:
+            14px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            30px !important;
+
+        letter-spacing:
+            -0.8px;
+
+    }
+
+
+    h1 + div p {
+
+        font-size:
+            13px;
+
+    }
+
+
+    section[data-testid="stFileUploader"] {
+
+        padding:
+            15px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    div[data-testid="stTextInput"]
+    input {
+
+        height:
+            50px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    h3 {
+
+        font-size:
+            20px !important;
+
+        padding:
+            14px;
+
+    }
+
+}
